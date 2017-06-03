@@ -1,0 +1,369 @@
+fileFormatVersion: 2
+guid: 59be534c9d1600246a2c7d8ca6477256
+timeCreated: 1493332130
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Back
+    100002: Chest
+    100004: Controller_Pelvis
+    100006: Head
+    100008: L_Ankle
+    100010: L_Clavicle
+    100012: L_Elbow
+    100014: L_Fingers_Base
+    100016: L_Fingers_Middle
+    100018: L_Fingers_Tip
+    100020: L_Hip
+    100022: L_Knee
+    100024: L_Shoulder
+    100026: L_Thumb_Base
+    100028: L_Thumb_Middle
+    100030: L_Thumb_Tip
+    100032: L_Toe
+    100034: L_Wrist
+    100036: //RootNode
+    100038: Low_Poly_Yenen_Model
+    100040: Neck
+    100042: Pelvis
+    100044: R_Ankle
+    100046: R_Clavicle
+    100048: R_Elbow
+    100050: R_Fingers_Base
+    100052: R_Fingers_Middle
+    100054: R_Fingers_Tip
+    100056: R_Hip
+    100058: R_Knee
+    100060: R_Shoulder
+    100062: R_Thumb_Base
+    100064: R_Thumb_Middle
+    100066: R_Thumb_Tip
+    100068: R_Toe
+    100070: R_Wrist
+    100072: Stomach
+    100074: Waist
+    400000: Back
+    400002: Chest
+    400004: Controller_Pelvis
+    400006: Head
+    400008: L_Ankle
+    400010: L_Clavicle
+    400012: L_Elbow
+    400014: L_Fingers_Base
+    400016: L_Fingers_Middle
+    400018: L_Fingers_Tip
+    400020: L_Hip
+    400022: L_Knee
+    400024: L_Shoulder
+    400026: L_Thumb_Base
+    400028: L_Thumb_Middle
+    400030: L_Thumb_Tip
+    400032: L_Toe
+    400034: L_Wrist
+    400036: //RootNode
+    400038: Low_Poly_Yenen_Model
+    400040: Neck
+    400042: Pelvis
+    400044: R_Ankle
+    400046: R_Clavicle
+    400048: R_Elbow
+    400050: R_Fingers_Base
+    400052: R_Fingers_Middle
+    400054: R_Fingers_Tip
+    400056: R_Hip
+    400058: R_Knee
+    400060: R_Shoulder
+    400062: R_Thumb_Base
+    400064: R_Thumb_Middle
+    400066: R_Thumb_Tip
+    400068: R_Toe
+    400070: R_Wrist
+    400072: Stomach
+    400074: Waist
+    2300000: Low_Poly_Yenen_Model
+    3300000: Low_Poly_Yenen_Model
+    4300000: Low_Poly_Yenen_Model
+    7400000: Idle
+    7400002: Walking
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Low_Poly_Yenen_Model
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 8
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Controller_Pelvis
+        weight: 1
+      - path: Controller_Pelvis/Pelvis
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/L_Hip
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/L_Hip/L_Knee
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/L_Hip/L_Knee/L_Ankle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/L_Hip/L_Knee/L_Ankle/L_Toe
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/R_Hip
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/R_Hip/R_Knee/R_Ankle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/R_Hip/R_Knee/R_Ankle/R_Toe
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/Chest
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Fingers_Base
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Fingers_Base/L_Fingers_Middle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Fingers_Base/L_Fingers_Middle/L_Fingers_Tip
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Thumb_Base
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Thumb_Base/L_Thumb_Middle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Thumb_Base/L_Thumb_Middle/L_Thumb_Tip
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/Neck
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/Neck/Head
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Fingers_Base
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Fingers_Base/R_Fingers_Middle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Fingers_Base/R_Fingers_Middle/R_Fingers_Tip
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Thumb_Base
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Thumb_Base/R_Thumb_Middle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Thumb_Base/R_Thumb_Middle/R_Thumb_Tip
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Stomach
+        weight: 1
+      - path: Low_Poly_Yenen_Model
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walking
+      takeName: Take 001
+      firstFrame: 11
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Controller_Pelvis
+        weight: 1
+      - path: Controller_Pelvis/Pelvis
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/L_Hip
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/L_Hip/L_Knee
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/L_Hip/L_Knee/L_Ankle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/L_Hip/L_Knee/L_Ankle/L_Toe
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/R_Hip
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/R_Hip/R_Knee/R_Ankle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/R_Hip/R_Knee/R_Ankle/R_Toe
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/Chest
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Fingers_Base
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Fingers_Base/L_Fingers_Middle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Fingers_Base/L_Fingers_Middle/L_Fingers_Tip
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Thumb_Base
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Thumb_Base/L_Thumb_Middle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/L_Clavicle/L_Shoulder/L_Elbow/L_Wrist/L_Thumb_Base/L_Thumb_Middle/L_Thumb_Tip
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/Neck
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/Neck/Head
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Fingers_Base
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Fingers_Base/R_Fingers_Middle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Fingers_Base/R_Fingers_Middle/R_Fingers_Tip
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Thumb_Base
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Thumb_Base/R_Thumb_Middle
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Back/R_Clavicle/R_Shoulder/R_Elbow/R_Wrist/R_Thumb_Base/R_Thumb_Middle/R_Thumb_Tip
+        weight: 1
+      - path: Controller_Pelvis/Pelvis/Waist/Stomach
+        weight: 1
+      - path: Low_Poly_Yenen_Model
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: Pelvis
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
