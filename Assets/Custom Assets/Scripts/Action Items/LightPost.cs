@@ -14,6 +14,7 @@ public class LightPost : ActionItem
     public float FogTransSpeed = .33f;
     public float heightLimit = 5f;
     public float timeTransSpeed = .33f;
+
     void Start()
     {
 
@@ -32,7 +33,7 @@ public class LightPost : ActionItem
             DialogueSystem.Instance.AddNewDialogue(onDialogue, "Yenen");
         else
             DialogueSystem.Instance.AddNewDialogue(dialogue, "Yenen");
-        Debug.Log("Interacting with Light Post!");
+        //Debug.Log("Interacting with Light Post!");
         
         if(boxSwitch == true)
         {
@@ -67,13 +68,6 @@ public class LightPost : ActionItem
             yield return new WaitForSeconds(timeTransSpeed);
             i -= FogTransSpeed;
             fogRef.height = i;
-        }
-          
+        }     
     }
-
-
-    
-
-
-
 }
