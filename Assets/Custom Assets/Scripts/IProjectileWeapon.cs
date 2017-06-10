@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 
-public interface IProjectileWeapon
+namespace YenensTale
 {
-    Transform ProjectileSpawn { get; set; }
-    void CastProjectile();
+    public interface IProjectileWeapon
+    {
+        Transform ProjectileSpawn { get; set; }
+        void CastProjectile();
+    }
 }

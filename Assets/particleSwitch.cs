@@ -2,46 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class particleSwitch : MonoBehaviour {
+namespace YenensTale
+{
+    public class particleSwitch : MonoBehaviour
+    {
 
 
-    static bool toggleParticle;
+        static bool toggleParticle;
 
 
-	// Use this for initialization
-	void Start () {
-        //gameObject.SetActive(true);
-        transform.GetChild(0).gameObject.SetActive(false);
-        transform.GetChild(1).gameObject.SetActive(false);
-        transform.GetChild(2).gameObject.SetActive(false);
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        if (toggleParticle == true)
+        // Use this for initialization
+        void Start()
         {
-            transform.GetChild(0).gameObject.SetActive(true);
-            transform.GetChild(1).gameObject.SetActive(true);
-            transform.GetChild(2).gameObject.SetActive(true);
-        }
-        else
-        {
+            //gameObject.SetActive(true);
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(false);
             transform.GetChild(2).gameObject.SetActive(false);
         }
-            
-    }
 
-    public static bool ToggleParticle
-    {
-        get
+        // Update is called once per frame
+        void Update()
         {
-            return toggleParticle;
+            if (toggleParticle == true)
+            {
+                transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(2).gameObject.SetActive(true);
+            }
+            else
+            {
+                transform.GetChild(0).gameObject.SetActive(false);
+                transform.GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(2).gameObject.SetActive(false);
+            }
+
         }
-        set
+
+        public static bool ToggleParticle
         {
-            toggleParticle = value;
+            get
+            {
+                return toggleParticle;
+            }
+            set
+            {
+                toggleParticle = value;
+            }
         }
     }
 }

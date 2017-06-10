@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public interface IEnemy
+namespace YenensTale
 {
-    void TakeDamage(int amount);
-    void PerformAttack();
+    public interface IEnemy
+    {
+        void TakeDamage(int amount);
+        void PerformAttack();
+    }
 }

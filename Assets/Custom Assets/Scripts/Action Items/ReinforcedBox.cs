@@ -1,29 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ReinforcedBox : ActionItem
+namespace YenensTale
 {
-    public string[] dialogue;
-    public string[] emptyDialogue;
-
-    bool interacted;
-
-    public delegate void SwitchFlipped();
-    public event SwitchFlipped switchFlipped;
-
-    public override void Interact()
+    public class ReinforcedBox : ActionItem
     {
-        if (interacted)
-            DialogueSystem.Instance.AddNewDialogue(emptyDialogue, "Yenen");
-        else
-            DialogueSystem.Instance.AddNewDialogue(dialogue, "Yenen");
-        interacted = true;
-        Debug.Log("Interacting with Reinforced Box!");
-        if (switchFlipped != null) {
-            switchFlipped();
+        public string[] dialogue;
+        public string[] emptyDialogue;
+
+        bool interacted;
+
+        public delegate void SwitchFlipped();
+        public event SwitchFlipped switchFlipped;
+
+        public override void Interact()
+        {
+            if (interacted)
+                DialogueSystem.Instance.AddNewDialogue(emptyDialogue, "Yenen");
+            else
+                DialogueSystem.Instance.AddNewDialogue(dialogue, "Yenen");
+            interacted = true;
+            Debug.Log("Interacting with Reinforced Box!");
+            if (switchFlipped != null)
+            {
+                switchFlipped();
+            }
+            //print(lightPost.BoxSwitch);
+            //activate.equipRecharge();
+
         }
-        //print(lightPost.BoxSwitch);
-        //activate.equipRecharge();
-        
     }
 }

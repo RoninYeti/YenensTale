@@ -1,29 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class CharacterStats : MonoBehaviour
+namespace YenensTale
 {
-    public List<BaseStat> stats = new List<BaseStat>();
-
-    void Start()
+    public class CharacterStats : MonoBehaviour
     {
-        stats.Add(new BaseStat(4, "Power", "Your power level."));
-        stats.Add(new BaseStat(2, "Vitality", "Your vitality level."));
-    }
+        public List<BaseStat> stats = new List<BaseStat>();
 
-    public void AddStatBonus(List<BaseStat> statBonuses)
-    {
-        foreach(BaseStat statBonus in statBonuses)
+        void Start()
         {
-            stats.Find(x=> x.StatName == statBonus.StatName).AddStatBonus(new StatBonus(statBonus.BaseValue));
+            stats.Add(new BaseStat(4, "Power", "Your power level."));
+            stats.Add(new BaseStat(2, "Vitality", "Your vitality level."));
         }
-    }
 
-    public void RemoveStatBonus(List<BaseStat> statBonuses)
-    {
-        foreach (BaseStat statBonus in statBonuses)
+        public void AddStatBonus(List<BaseStat> statBonuses)
         {
-            stats.Find(x => x.StatName == statBonus.StatName).AddStatBonus(new StatBonus(statBonus.BaseValue));
+            foreach (BaseStat statBonus in statBonuses)
+            {
+                stats.Find(x => x.StatName == statBonus.StatName).AddStatBonus(new StatBonus(statBonus.BaseValue));
+            }
+        }
+
+        public void RemoveStatBonus(List<BaseStat> statBonuses)
+        {
+            foreach (BaseStat statBonus in statBonuses)
+            {
+                stats.Find(x => x.StatName == statBonus.StatName).AddStatBonus(new StatBonus(statBonus.BaseValue));
+            }
         }
     }
 }

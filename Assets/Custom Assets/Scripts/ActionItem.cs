@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ActionItem : Interactable {
-    public override void Interact()
+namespace YenensTale
+{
+    public class ActionItem : Interactable
     {
-        Debug.Log("Interacting with base ActionItem!");
+        public override void Interact()
+        {
+            Debug.Log("Interacting with base ActionItem!");
+        }
     }
 }

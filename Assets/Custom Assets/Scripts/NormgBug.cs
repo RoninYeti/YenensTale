@@ -2,30 +2,33 @@
 using System.Collections;
 using UnityEngine;
 
-public class NormgBug : MonoBehaviour, IEnemy
+namespace YenensTale
 {
-    public float currentHealth, power, toughness;
-    public float maxhealth;
-
-    void Start()
+    public class NormgBug : MonoBehaviour, IEnemy
     {
-        currentHealth = maxhealth;
-    }
+        public float currentHealth, power, toughness;
+        public float maxhealth;
 
-    public void PerformAttack()
-    {
-        throw new NotImplementedException();
-    }
+        void Start()
+        {
+            currentHealth = maxhealth;
+        }
 
-    public void TakeDamage(int amount)
-    {
-        currentHealth -= amount;
-        if (currentHealth <= 0)
-            Die();
-    }
+        public void PerformAttack()
+        {
+            throw new NotImplementedException();
+        }
 
-    void Die()
-    {
-        Destroy(gameObject);
+        public void TakeDamage(int amount)
+        {
+            currentHealth -= amount;
+            if (currentHealth <= 0)
+                Die();
+        }
+
+        void Die()
+        {
+            Destroy(gameObject);
+        }
     }
 }

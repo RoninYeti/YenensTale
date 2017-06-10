@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class StatBonus
+namespace YenensTale
 {
-    public int BonusValue { get; set; }
-
-    public StatBonus(int bonusValue)
+    public class StatBonus
     {
-        this.BonusValue = bonusValue;
-        Debug.Log("New stat bonus initiated.");
+        public int BonusValue { get; set; }
+
+        public StatBonus(int bonusValue)
+        {
+            this.BonusValue = bonusValue;
+            Debug.Log("New stat bonus initiated.");
+        }
     }
 }

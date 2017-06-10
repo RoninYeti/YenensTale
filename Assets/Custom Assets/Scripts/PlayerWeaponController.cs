@@ -1,55 +1,58 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class PlayerWeaponController : MonoBehaviour
+namespace YenensTale
 {
-    public GameObject playerHand;
-    public GameObject EquippedWeapon { get; set; }
-
-    Transform spawnProjectile;
-    IWeapon equippedWeapon;
-    CharacterStats characterStats;
-
-    void Start()
+    public class PlayerWeaponController : MonoBehaviour
     {
-        spawnProjectile = transform.Find("ProjectileSpawn");
-        characterStats = GetComponent<CharacterStats>();
-    }
+        public GameObject playerHand;
+        public GameObject EquippedWeapon { get; set; }
 
-    public void EquipWeapon(Item itemToEquip)
-    {
-        if (EquippedWeapon != null)
+        Transform spawnProjectile;
+        IWeapon equippedWeapon;
+        CharacterStats characterStats;
+
+        void Start()
         {
-            characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
-            Destroy(playerHand.transform.GetChild(0).gameObject);
+            spawnProjectile = transform.Find("ProjectileSpawn");
+            characterStats = GetComponent<CharacterStats>();
         }
 
-        EquippedWeapon = (GameObject)Instantiate(Resources.Load<GameObject>("Weapons/" + itemToEquip.ObjectSlug),
-            playerHand.transform.position, playerHand.transform.rotation);
-        equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
-        if (EquippedWeapon.GetComponent<IProjectileWeapon>() != null)
-            EquippedWeapon.GetComponent<IProjectileWeapon>().ProjectileSpawn = spawnProjectile;
-        equippedWeapon.Stats = itemToEquip.Stats;
-        EquippedWeapon.transform.SetParent(playerHand.transform);
-        characterStats.AddStatBonus(itemToEquip.Stats);
-        Debug.Log(equippedWeapon.Stats[0].GetCalculatedStatValue());
-    }
+        public void EquipWeapon(Item itemToEquip)
+        {
+            if (EquippedWeapon != null)
+            {
+                characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
+                Destroy(playerHand.transform.GetChild(0).gameObject);
+            }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.X))
-            PerformWeaponAttack();
-        if (Input.GetKeyDown(KeyCode.Z))
-            PerformWeaponSpecialAttack();
-    }
+            EquippedWeapon = (GameObject)Instantiate(Resources.Load<GameObject>("Weapons/" + itemToEquip.ObjectSlug),
+                playerHand.transform.position, playerHand.transform.rotation);
+            equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
+            if (EquippedWeapon.GetComponent<IProjectileWeapon>() != null)
+                EquippedWeapon.GetComponent<IProjectileWeapon>().ProjectileSpawn = spawnProjectile;
+            equippedWeapon.Stats = itemToEquip.Stats;
+            EquippedWeapon.transform.SetParent(playerHand.transform);
+            characterStats.AddStatBonus(itemToEquip.Stats);
+            Debug.Log(equippedWeapon.Stats[0].GetCalculatedStatValue());
+        }
 
-    public void PerformWeaponAttack()
-    {
-        equippedWeapon.PerformAttack();
-    }
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.X))
+                PerformWeaponAttack();
+            if (Input.GetKeyDown(KeyCode.Z))
+                PerformWeaponSpecialAttack();
+        }
 
-    public void PerformWeaponSpecialAttack()
-    {
-        equippedWeapon.PerformSpecialAttack();
+        public void PerformWeaponAttack()
+        {
+            equippedWeapon.PerformAttack();
+        }
+
+        public void PerformWeaponSpecialAttack()
+        {
+            equippedWeapon.PerformSpecialAttack();
+        }
     }
 }

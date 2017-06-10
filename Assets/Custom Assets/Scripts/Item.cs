@@ -1,14 +1,17 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Item
+namespace YenensTale
 {
-    public List<BaseStat> Stats { get; set; }
-    public string ObjectSlug { get; set; }
-
-    public Item(List<BaseStat> _Stats, string _ObjectSlug)
+    public class Item
     {
-        this.Stats = _Stats;
-        this.ObjectSlug = _ObjectSlug;
+        public List<BaseStat> Stats { get; set; }
+        public string ObjectSlug { get; set; }
+
+        public Item(List<BaseStat> _Stats, string _ObjectSlug)
+        {
+            this.Stats = _Stats;
+            this.ObjectSlug = _ObjectSlug;
+        }
     }
 }

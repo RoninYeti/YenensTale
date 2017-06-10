@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SignPost : ActionItem
+namespace YenensTale
 {
-    public string[] dialogue;
-    public override void Interact()
+    public class SignPost : ActionItem
     {
-        DialogueSystem.Instance.AddNewDialogue(dialogue, "Yenen");
-        Debug.Log("Interacting with sign post!");
+        public string[] dialogue;
+        public override void Interact()
+        {
+            DialogueSystem.Instance.AddNewDialogue(dialogue, "Yenen");
+            Debug.Log("Interacting with sign post!");
+        }
     }
 }
