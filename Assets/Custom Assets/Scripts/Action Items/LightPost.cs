@@ -3,55 +3,52 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.ImageEffects;
 
-namespace YenensTale
-{
-    public class LightPost : ActionItem
-    {
+namespace YenensTale {
+    public class LightPost : ActionItem {
+
         public string[] dialogue;
         public string[] onDialogue;
         bool boxSwitch = false;
+
         [SerializeField]
         ReinforcedBox box;
         public GlobalFog fogRef;
         public float FogTransSpeed = .33f;
         public float heightLimit = 5f;
         public float timeTransSpeed = .33f;
+        public object aSource;
+        public AudioClip particlesStart;
+        public AudioClip particlesLoop;
 
-        void Start()
-        {
 
+        void Start() {
             box.switchFlipped += Box_switchFlipped;
             //StartCoroutine(DelayFade());
         }
 
-        private void Box_switchFlipped()
-        {
+        private void Box_switchFlipped() {
             boxSwitch = true;
         }
 
-        public override void Interact()
-        {
+        public override void Interact() {
             if (boxSwitch)
                 DialogueSystem.Instance.AddNewDialogue(onDialogue, "Yenen");
             else
                 DialogueSystem.Instance.AddNewDialogue(dialogue, "Yenen");
             //Debug.Log("Interacting with Light Post!");
 
-            if (boxSwitch == true)
-            {
-
+            if (boxSwitch == true) {
+                //aSource.PlayOneShot(particlesStart);        Fix this sound!!
                 particleSwitch.ToggleParticle = true;
                 lightSwitch1.ToggleLight1 = true;
                 lightSwitch2.ToggleLight2 = true;
                 lightSwitch3.ToggleLight3 = true;
+                //aSource.PlayOneShot(particlesLoop);         Fix this sound!!
                 StartCoroutine(lowerFog());
-                //call function to enable lights and particle objects here
             }
-
         }
 
-        public bool BoxSwitch
-        {
+        public bool BoxSwitch {
             get
             {
                 return boxSwitch;
@@ -62,11 +59,9 @@ namespace YenensTale
             }
         }
 
-        IEnumerator lowerFog()
-        {
+        IEnumerator lowerFog() {
             float i = fogRef.height;
-            while (i > heightLimit)
-            {
+            while (i > heightLimit) {
                 yield return new WaitForSeconds(timeTransSpeed);
                 i -= FogTransSpeed;
                 fogRef.height = i;

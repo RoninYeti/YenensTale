@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace YenensTale
-{
-    public class SignPost : ActionItem
-    {
+namespace YenensTale {
+    public class SignPost : ActionItem {
+
         public string[] dialogue;
-        public override void Interact()
-        {
+        public object aSource;
+        public AudioClip signPostStart;
+
+        public override void Interact() {
+            //aSource.PlayOneShot(signPostStart);                          Fix this sound!!
             DialogueSystem.Instance.AddNewDialogue(dialogue, "Yenen");
-            Debug.Log("Interacting with sign post!");
         }
     }
 }

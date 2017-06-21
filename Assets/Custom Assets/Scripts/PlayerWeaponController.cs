@@ -1,10 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace YenensTale
-{
-    public class PlayerWeaponController : MonoBehaviour
-    {
+namespace YenensTale {
+    public class PlayerWeaponController : MonoBehaviour {
+
         public GameObject playerHand;
         public GameObject EquippedWeapon { get; set; }
 
@@ -12,16 +11,13 @@ namespace YenensTale
         IWeapon equippedWeapon;
         CharacterStats characterStats;
 
-        void Start()
-        {
+        void Start() {
             spawnProjectile = transform.Find("ProjectileSpawn");
             characterStats = GetComponent<CharacterStats>();
         }
 
-        public void EquipWeapon(Item itemToEquip)
-        {
-            if (EquippedWeapon != null)
-            {
+        public void EquipWeapon(Item itemToEquip) {
+            if (EquippedWeapon != null) {
                 characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
                 Destroy(playerHand.transform.GetChild(0).gameObject);
             }
@@ -37,21 +33,18 @@ namespace YenensTale
             Debug.Log(equippedWeapon.Stats[0].GetCalculatedStatValue());
         }
 
-        void Update()
-        {
+        void Update() {
             if (Input.GetKeyDown(KeyCode.X))
                 PerformWeaponAttack();
             if (Input.GetKeyDown(KeyCode.Z))
                 PerformWeaponSpecialAttack();
         }
 
-        public void PerformWeaponAttack()
-        {
+        public void PerformWeaponAttack() {
             equippedWeapon.PerformAttack();
         }
 
-        public void PerformWeaponSpecialAttack()
-        {
+        public void PerformWeaponSpecialAttack() {
             equippedWeapon.PerformSpecialAttack();
         }
     }
