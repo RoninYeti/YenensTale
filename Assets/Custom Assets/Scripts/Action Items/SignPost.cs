@@ -5,11 +5,11 @@ namespace YenensTale {
     public class SignPost : ActionItem {
 
         public string[] dialogue;
-        public object aSource;
+        public AudioSource aSource;
         public AudioClip signPostStart;
 
         public override void Interact() {
-            //aSource.PlayOneShot(signPostStart);                          Fix this sound!!
+            aSource.PlayOneShot(signPostStart);
             DialogueSystem.Instance.AddNewDialogue(dialogue, "Yenen");
         }
     }

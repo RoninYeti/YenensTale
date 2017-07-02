@@ -6,7 +6,7 @@ using System.Collections;
 namespace YenensTale {
     public class KayCrystal : ActionItem {
 
-        public object aSource;
+        public AudioSource aSource;
         public AudioClip fadingTransition;
 
         [Serializable]
@@ -33,14 +33,15 @@ namespace YenensTale {
         }
 
         IEnumerator DelayFade() {
-            //print(Time.time);
             yield return new WaitForSeconds(4);
-            //print(Time.time);
             Scene currentScene = SceneManager.GetActiveScene();
-            //aSource.PlayOneShot(fadingTransition);                   Fix this sound!!
+            //Need to mute "The Fog" from Camera Audio Source
+            aSource.PlayOneShot(fadingTransition);
             SceneManager.LoadScene("Par'N Terrain/Par'n Kay Crystal (Crossroad)", LoadSceneMode.Additive);
             yield return new WaitForSeconds(15);
-            //SceneManager.LoadScene("Par'N Terrain/Par'n Terrain", LoadSceneMode.Additive);                 Fix this line!!
+            //Need to bring Player back to original scene
+            //Need to play "Fade In" audio clip
+            //Need to unmute "The Fog" from Camera Audio Source
         }
     }
 }
