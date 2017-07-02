@@ -10,7 +10,8 @@ namespace YenensTale {
         public GameObject dialoguePanel;
         public string npcName;
         public List<string> dialogueLines = new List<string>();
-        public object aSource;
+
+        public AudioSource aSource;
         public AudioClip nextBox;
 
         Button continueButton;
@@ -27,6 +28,7 @@ namespace YenensTale {
             if (Instance != null && Instance != this) {
                 Destroy(gameObject);
             }
+
             else {
                 Instance = this;
             }
@@ -38,6 +40,7 @@ namespace YenensTale {
             foreach (string line in lines) {
                 dialogueLines.Add(line);
             }
+
             this.npcName = npcName;
 
             CreateDialogue();
@@ -51,11 +54,13 @@ namespace YenensTale {
 
         public void ContinueDialogue() {
             if (dialogueIndex < dialogueLines.Count - 1) {
-                //aSource.PlayOneShot(nextBox);                Fix this sound!!
+                aSource.PlayOneShot(nextBox);
                 dialogueIndex++;
                 dialogueText.text = dialogueLines[dialogueIndex];
             }
+
             else {
+                aSource.PlayOneShot(nextBox);
                 dialoguePanel.SetActive(false);
             }
         }

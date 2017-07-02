@@ -16,9 +16,9 @@ namespace YenensTale {
         public float FogTransSpeed = .33f;
         public float heightLimit = 5f;
         public float timeTransSpeed = .33f;
-        public object aSource;
+
+        public AudioSource aSource;
         public AudioClip particlesStart;
-        public AudioClip particlesLoop;
 
 
         void Start() {
@@ -33,17 +33,19 @@ namespace YenensTale {
         public override void Interact() {
             if (boxSwitch)
                 DialogueSystem.Instance.AddNewDialogue(onDialogue, "Yenen");
+
             else
                 DialogueSystem.Instance.AddNewDialogue(dialogue, "Yenen");
-            //Debug.Log("Interacting with Light Post!");
 
             if (boxSwitch == true) {
-                //aSource.PlayOneShot(particlesStart);        Fix this sound!!
-                particleSwitch.ToggleParticle = true;
+                aSource.PlayOneShot(particlesStart);
                 lightSwitch1.ToggleLight1 = true;
                 lightSwitch2.ToggleLight2 = true;
                 lightSwitch3.ToggleLight3 = true;
-                //aSource.PlayOneShot(particlesLoop);         Fix this sound!!
+                //Need to create a delay here before the machine sound loops
+                AudioSource audio = GetComponent<AudioSource>();
+                audio.PlayDelayed(1);
+                particleSwitch.ToggleParticle = true;
                 StartCoroutine(lowerFog());
             }
         }

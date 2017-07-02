@@ -6,8 +6,9 @@ namespace YenensTale {
 
         public string[] dialogue;
         public string[] emptyDialogue;
+
+        public AudioSource aSource;
         public AudioClip reinforcedBox;
-        public object aSource;
 
         bool interacted;
 
@@ -15,16 +16,18 @@ namespace YenensTale {
         public event SwitchFlipped switchFlipped;
 
         public override void Interact() {
-            if (interacted)
+            if (interacted) {
                 DialogueSystem.Instance.AddNewDialogue(emptyDialogue, "Yenen");
-                //aSource.PlayOneShot(reinforcedBox);                              Fix this sound!!
+            }
             else
+                aSource.PlayOneShot(reinforcedBox);
                 DialogueSystem.Instance.AddNewDialogue(dialogue, "Yenen");
             interacted = true;
 
             if (switchFlipped != null) {
                 switchFlipped();
             }
+
             //print(lightPost.BoxSwitch);
             //activate.equipRecharge();
         }
