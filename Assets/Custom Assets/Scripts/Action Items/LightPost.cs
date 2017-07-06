@@ -9,14 +9,14 @@ namespace YenensTale {
         public string[] dialogue;
         public string[] onDialogue;
         bool boxSwitch = false;
-
         [SerializeField]
         ReinforcedBox box;
         public GlobalFog fogRef;
         public float FogTransSpeed = .33f;
         public float heightLimit = 5f;
         public float timeTransSpeed = .33f;
-
+        [SerializeField]
+        private NormgBug buggy;
         public AudioSource aSource;
         public AudioClip particlesStart;
 
@@ -42,6 +42,7 @@ namespace YenensTale {
                 lightSwitch1.ToggleLight1 = true;
                 lightSwitch2.ToggleLight2 = true;
                 lightSwitch3.ToggleLight3 = true;
+                buggy.BugMove();
                 //Need to create a delay here before the machine sound loops
                 AudioSource audio = GetComponent<AudioSource>();
                 audio.PlayDelayed(1);

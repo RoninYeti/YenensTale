@@ -22,11 +22,7 @@ namespace YenensTale
             light1.enabled = (toggleLight1);
         }
 
-        /*public void toggleLight1()
-        {
-            light1.enabled = true;
-        }
-        */
+        
 
         public static bool ToggleLight1
         {
