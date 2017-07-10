@@ -19,6 +19,7 @@ namespace YenensTale {
         private NormgBug buggy;
         public AudioSource aSource;
         public AudioClip particlesStart;
+        private int useCounter = 1;
 
 
         void Start() {
@@ -37,7 +38,7 @@ namespace YenensTale {
             else
                 DialogueSystem.Instance.AddNewDialogue(dialogue, "Yenen");
 
-            if (boxSwitch == true) {
+            if (boxSwitch == true && useCounter == 1) {
                 aSource.PlayOneShot(particlesStart);
                 lightSwitch1.ToggleLight1 = true;
                 lightSwitch2.ToggleLight2 = true;
@@ -48,6 +49,7 @@ namespace YenensTale {
                 audio.PlayDelayed(1);
                 particleSwitch.ToggleParticle = true;
                 StartCoroutine(lowerFog());
+                useCounter++;
             }
         }
 
