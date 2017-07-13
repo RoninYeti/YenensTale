@@ -9,18 +9,19 @@ namespace YenensTale {
         public string[] dialogue;
         public string[] onDialogue;
         bool boxSwitch = false;
+
         [SerializeField]
         ReinforcedBox box;
         public GlobalFog fogRef;
         public float FogTransSpeed = .33f;
         public float heightLimit = 5f;
         public float timeTransSpeed = .33f;
+
         [SerializeField]
         private NormgBug buggy;
         public AudioSource aSource;
         public AudioClip particlesStart;
         private int useCounter = 1;
-
 
         void Start() {
             box.switchFlipped += Box_switchFlipped;
