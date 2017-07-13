@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yenen's Tale v.7.5.CSharp.Plugins", "Yenen's Tale v.7.5.CSharp.Plugins.csproj", "{0F05BBA5-A0BF-EE2E-2689-FCBB79DEA1DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yenen's Tale v.7.5.CSharp", "Yenen's Tale v.7.5.CSharp.csproj", "{A88090FF-945F-6AAA-58E8-044CADF72792}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yenen's Tale v.7.5.CSharp.Editor", "Yenen's Tale v.7.5.CSharp.Editor.csproj", "{DC97B4B4-8265-8BD7-C759-673C89587F68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F05BBA5-A0BF-EE2E-2689-FCBB79DEA1DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F05BBA5-A0BF-EE2E-2689-FCBB79DEA1DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F05BBA5-A0BF-EE2E-2689-FCBB79DEA1DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F05BBA5-A0BF-EE2E-2689-FCBB79DEA1DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A88090FF-945F-6AAA-58E8-044CADF72792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A88090FF-945F-6AAA-58E8-044CADF72792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A88090FF-945F-6AAA-58E8-044CADF72792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A88090FF-945F-6AAA-58E8-044CADF72792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC97B4B4-8265-8BD7-C759-673C89587F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC97B4B4-8265-8BD7-C759-673C89587F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC97B4B4-8265-8BD7-C759-673C89587F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC97B4B4-8265-8BD7-C759-673C89587F68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
