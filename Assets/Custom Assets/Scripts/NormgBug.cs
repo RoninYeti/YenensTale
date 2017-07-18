@@ -9,7 +9,7 @@ namespace YenensTale {
         public float maxhealth;
         public Animator bugDeath;
         //public Transform bugStartPoint;
-        public GameObject bugPlace;
+        public GameObject bugEndPoint;
         public BugEnemy otherScript;
         public bugFirstMoves otherOtherScript;
         public UnityEngine.AI.NavMeshAgent navTesting = null;
@@ -36,7 +36,7 @@ namespace YenensTale {
         }
 
         void FixedUpdate() {
-            if (Vector3.Distance(transform.position, bugPlace.transform.position) <= 20) {
+            if (Vector3.Distance(transform.position, bugEndPoint.transform.position) <= 5f) {
                 otherOtherScript.enabled = false;
                 //deactivate and reactivate the navmesh
                 navTesting.enabled = false;
