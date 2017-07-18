@@ -8,6 +8,7 @@ namespace YenensTale {
         public float currentHealth, power, toughness;
         public float maxhealth;
         public Animator bugDeath;
+        public Transform bugEndPoint;
         //public Transform bugStartPoint;
         public GameObject lightPost;
         public BugEnemy otherScript;
@@ -32,10 +33,11 @@ namespace YenensTale {
         void Die() {
             //Destroy(gameObject);
             bugDeath.SetTrigger("Bug Dead");
+            otherScript.enabled = false;
         }
 
         void FixedUpdate() {
-            if (Vector3.Distance(transform.position, lightPost.transform.position) <= 20) {
+            if (Vector3.Distance(transform.position, bugEndPoint.transform.position) <= 2f) {
                 otherOtherScript.enabled = false;
                 //deactivate and reactivate the navmesh
                 navTesting.enabled = false;
