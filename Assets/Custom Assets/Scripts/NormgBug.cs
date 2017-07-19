@@ -8,18 +8,15 @@ namespace YenensTale {
         public float currentHealth, power, toughness;
         public float maxhealth;
         public Animator bugDeath;
-        public Transform bugStartPoint;
-        
-        public GameObject lightPost;
+        //public Transform bugStartPoint;
+        public GameObject bugEndPoint;
         public BugEnemy otherScript;
         public bugFirstMoves otherOtherScript;
         public UnityEngine.AI.NavMeshAgent navTesting = null;
-        
-        
+                
         void Start() {
             currentHealth = maxhealth;
-            transform.position = bugStartPoint.position;
-            
+            //transform.position = bugStartPoint.position;  
         }
 
         public void PerformAttack() {
@@ -35,34 +32,21 @@ namespace YenensTale {
         void Die() {
             //Destroy(gameObject);
             bugDeath.SetTrigger("Bug Dead");
+            otherScript.enabled = false;
         }
 
-        void FixedUpdate()
-        {
-            
-
-            if (Vector3.Distance(transform.position, lightPost.transform.position) <= 20)
-            {
-                
+        void FixedUpdate() {
+            if (Vector3.Distance(transform.position, bugEndPoint.transform.position) <= 5f) {
                 otherOtherScript.enabled = false;
                 //deactivate and reactivate the navmesh
                 navTesting.enabled = false;
                 navTesting.enabled = true;
                 otherScript.enabled = true;
             }
-
-            
         }
 
-        
-
-        
-
-        public void BugMove()
-        {
-            
+        public void BugMove() {
             otherOtherScript.enabled = true;
-            
         }
     }
 }

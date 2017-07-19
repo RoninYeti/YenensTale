@@ -43,7 +43,6 @@ namespace YenensTale {
                 aSource.PlayOneShot(particlesStart);
                 lightSwitch1.ToggleLight1 = true;
                 lightSwitch2.ToggleLight2 = true;
-                lightSwitch3.ToggleLight3 = true;
                 buggy.BugMove();
                 //Need to create a delay here before the machine sound loops
                 AudioSource audio = GetComponent<AudioSource>();
