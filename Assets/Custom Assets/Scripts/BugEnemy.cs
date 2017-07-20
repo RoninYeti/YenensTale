@@ -33,8 +33,8 @@ namespace YenensTale {
             transform.rotation = Quaternion.Slerp(transform.rotation, thataWay, Time.deltaTime * 5.0f);
             
             if (attackingTimer >= attackTime && distance <= 20) {
-                StallPoint();
-                thataWay = Quaternion.LookRotation(stallPoint);
+                //StallPoint();
+                //thataWay = Quaternion.LookRotation(stallPoint);
                 attack();
 
                 if (attackingTimer >= 15) {
@@ -44,9 +44,9 @@ namespace YenensTale {
             distdisplay = distance;
         }
 
-        public void StallPoint() {
+        /*public void StallPoint() {
             stallPoint = heWent;
-        }
+        }*/
 
         public void attack() {
             attackAnim.SetTrigger("Bug Attack");
