@@ -1,31 +1,34 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace YenensTale {
-    public class Lightning : MonoBehaviour {
+    public class NormgAttack : MonoBehaviour {
 
-        //public float Range { get; set; }
         public Vector3 Direction { get; set; }
+        public float Range { get; set; }
         public int Damage { get; set; }
 
         Vector3 spawnPosition;
 
         void Start() {
-            //Range = 5f;
+            Range = 5f;
             Damage = 10;
             spawnPosition = transform.position;
-            //GetComponent<Rigidbody>().AddForce(Direction * 50f);
+            GetComponent<Rigidbody>().AddForce(Direction * 50f);
         }
 
-        /*void Update() {
-            if (Vector3.Distance(spawnPosition, transform.position) >= Range) {
+        void Update() {
+            if (Vector3.Distance(spawnPosition, transform.position) >= Range)
+            {
                 Extinguish();
             }
-        }*/
+        }
 
         void OnCollisionEnter(Collision col) {
-            if (col.transform.tag == "Enemy") {
-                col.transform.GetComponent<IEnemy>().TakeDamage(Damage);
+            if (col.transform.tag == "Player")
+            {
+                //col.transform.GetComponent<IEnemy>().TakeDamage(Damage);
             }
             Extinguish();
         }

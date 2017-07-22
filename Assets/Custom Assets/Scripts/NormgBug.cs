@@ -8,15 +8,13 @@ namespace YenensTale {
         public float currentHealth, power, toughness;
         public float maxhealth;
         public Animator bugDeath;
-        //public Transform bugStartPoint;
         public GameObject bugEndPoint;
         public BugEnemy otherScript;
         public bugFirstMoves otherOtherScript;
         public UnityEngine.AI.NavMeshAgent navTesting = null;
                 
         void Start() {
-            currentHealth = maxhealth;
-            //transform.position = bugStartPoint.position;  
+            currentHealth = maxhealth; 
         }
 
         public void PerformAttack() {
@@ -30,7 +28,6 @@ namespace YenensTale {
         }
 
         void Die() {
-            //Destroy(gameObject);
             bugDeath.SetTrigger("Bug Dead");
             otherScript.enabled = false;
         }

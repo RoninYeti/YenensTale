@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace YenensTale {
-    public class BugEnemy : MonoBehaviour { 
-    
+    public class BugEnemy : MonoBehaviour {
+
         private UnityEngine.AI.NavMeshAgent navLook = null;
+        public Transform ProjectileSpawn;
         public Animator attackAnim;
         public GameObject playerLoc = null;
         Vector3 heWent;
-        Vector3 stallPoint;
         Quaternion thataWay;
-        public float attackTime = 5;
+        private float attackTime = 7;
         private float attackingTimer = 0;
         //the below float was used to simply show us usable parameters in the inspector
         public float distdisplay = 0;
+        Lightning lightning;
 
         void Start() {
             navLook = GetComponent<UnityEngine.AI.NavMeshAgent>();
             transform.position = transform.position;
+            lightning = Resources.Load<Lightning>("Weapons/Projectiles/Lightning");
         }
 
         void FixedUpdate() {
@@ -33,24 +35,24 @@ namespace YenensTale {
             transform.rotation = Quaternion.Slerp(transform.rotation, thataWay, Time.deltaTime * 5.0f);
             
             if (attackingTimer >= attackTime && distance <= 20) {
-                //StallPoint();
-                //thataWay = Quaternion.LookRotation(stallPoint);
                 attack();
 
-                if (attackingTimer >= 15) {
+                if (attackingTimer >= 7) {
                     attackingTimer = 0;
                 }
             }
             distdisplay = distance;
         }
 
-        /*public void StallPoint() {
-            stallPoint = heWent;
-        }*/
-
         public void attack() {
             attackAnim.SetTrigger("Bug Attack");
-            //add lightning stuff here
+            //StartCoroutine(attackDelay());
+            Lightning lightningInstance = (Lightning)Instantiate(lightning, ProjectileSpawn.position, ProjectileSpawn.rotation);
+            lightningInstance.Direction = ProjectileSpawn.forward;
         }
+
+        /*public IEnumerator attackDelay() {
+            yield return new WaitForSeconds(3f);
+        }*/
     }
 }
