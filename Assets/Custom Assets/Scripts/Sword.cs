@@ -28,7 +28,7 @@ namespace YenensTale {
         void OnTriggerEnter(Collider col) {
             //Debug.Log("Hit: " + col.name);
             if (col.tag == "Enemy") {
-                col.GetComponent<IEnemy>().TakeDamage(Stats[0].GetCalculatedStatValue());
+                col.GetComponent<IReceiveDamage>().ReceiveDamage(transform.forward, Stats[0].GetCalculatedStatValue(), gameObject);
             }
         }
 

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using YenensTale;
 
 namespace YenensTale {
-    public class NormgBug : MonoBehaviour, IEnemy {
+    public class NormgBug : MonoBehaviour, IReceiveDamage {
 
         public float currentHealth, power, toughness;
         public float maxhealth;
@@ -21,10 +22,15 @@ namespace YenensTale {
             throw new NotImplementedException();
         }
 
-        public void TakeDamage(int amount) {
+        /*public void TakeDamage(int amount) {
             currentHealth -= amount;
             if (currentHealth <= 0)
                 Die();
+        }*/
+
+        public void ReceiveDamage(Vector3 direction, float damage, GameObject source) {
+            currentHealth -= damage;
+            if (currentHealth <= 0) Die();
         }
 
         void Die() {

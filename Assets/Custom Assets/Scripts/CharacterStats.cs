@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace YenensTale {
-    public class CharacterStats : MonoBehaviour {
+    public class CharacterStats : MonoBehaviour, IReceiveDamage {
 
         public List<BaseStat> stats = new List<BaseStat>();
 
@@ -21,6 +21,10 @@ namespace YenensTale {
             foreach (BaseStat statBonus in statBonuses) {
                 stats.Find(x => x.StatName == statBonus.StatName).AddStatBonus(new StatBonus(statBonus.BaseValue));
             }
+        }
+
+        public void ReceiveDamage(Vector3 direction, float damage, GameObject source) {
+            transform.position -= direction;
         }
     }
 }

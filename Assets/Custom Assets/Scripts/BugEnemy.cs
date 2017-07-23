@@ -15,12 +15,13 @@ namespace YenensTale {
         private float attackingTimer = 0;
         //the below float was used to simply show us usable parameters in the inspector
         public float distdisplay = 0;
-        Lightning lightning;
+        [SerializeField]
+        private GameObject projectile;
+        //Lightning lightning;
 
         void Start() {
             navLook = GetComponent<UnityEngine.AI.NavMeshAgent>();
             transform.position = transform.position;
-            lightning = Resources.Load<Lightning>("Weapons/Projectiles/Lightning");
         }
 
         void FixedUpdate() {
@@ -47,8 +48,8 @@ namespace YenensTale {
         public void attack() {
             attackAnim.SetTrigger("Bug Attack");
             //StartCoroutine(attackDelay());
-            Lightning lightningInstance = (Lightning)Instantiate(lightning, ProjectileSpawn.position, ProjectileSpawn.rotation);
-            lightningInstance.Direction = ProjectileSpawn.forward;
+            GameObject projectileInstance = Instantiate(projectile, ProjectileSpawn.position, ProjectileSpawn.rotation);
+            projectileInstance.GetComponent<IProjectile>().Direction = ProjectileSpawn.forward;
         }
 
         /*public IEnumerator attackDelay() {

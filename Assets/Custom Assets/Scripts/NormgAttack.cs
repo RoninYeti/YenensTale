@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace YenensTale {
-    public class NormgAttack : MonoBehaviour {
+    public class NormgAttack : MonoBehaviour, IProjectile {
 
         public Vector3 Direction { get; set; }
         public float Range { get; set; }
@@ -25,10 +25,11 @@ namespace YenensTale {
             }
         }
 
-        void OnCollisionEnter(Collision col) {
-            if (col.transform.tag == "Player")
+        void OnTriggerEnter(Collider col) {
+            IReceiveDamage receiveDamage = col.transform.GetComponent<IReceiveDamage>();
+            if (receiveDamage != null)
             {
-                //col.transform.GetComponent<IEnemy>().TakeDamage(Damage);
+                receiveDamage.ReceiveDamage(Direction, Damage, gameObject);
             }
             Extinguish();
         }
