@@ -10,6 +10,7 @@ namespace YenensTale {
         public List<BaseStat> Stats { get; set; }
 
         public Transform ProjectileSpawn { get; set; }
+
         Lightning lightning;
 
         void Start() {
@@ -26,7 +27,6 @@ namespace YenensTale {
         }
 
         void OnTriggerEnter(Collider col) {
-            //Debug.Log("Hit: " + col.name);
             if (col.tag == "Enemy") {
                 col.GetComponent<IReceiveDamage>().ReceiveDamage(transform.forward, Stats[0].GetCalculatedStatValue(), gameObject);
             }

@@ -11,13 +11,14 @@ namespace YenensTale {
         public GameObject playerLoc = null;
         Vector3 heWent;
         Quaternion thataWay;
-        private float attackTime = 7;
-        private float attackingTimer = 0;
+        public float attackTime = 7;
+        public float attackingTimer = 0;
         //the below float was used to simply show us usable parameters in the inspector
         public float distdisplay = 0;
+        private float startAttackingTimer = 0;
+
         [SerializeField]
         private GameObject projectile;
-        //Lightning lightning;
 
         void Start() {
             navLook = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -34,26 +35,33 @@ namespace YenensTale {
             //Bug turns and looks at (player's direction)
             thataWay = Quaternion.LookRotation(heWent);
             transform.rotation = Quaternion.Slerp(transform.rotation, thataWay, Time.deltaTime * 5.0f);
-            
-            if (attackingTimer >= attackTime && distance <= 20) {
-                attack();
 
-                if (attackingTimer >= 7) {
-                    attackingTimer = 0;
+            if (distance <= 20) {
+                if (startAttackingTimer <= 5) {
+                    startAttackingTimer += Time.deltaTime;
                 }
+
+                if (startAttackingTimer > 3) {
+                    if (attackingTimer >= 7) {
+                        attack();
+                        attackingTimer = 0;
+                    }
+
+                    if (attackingTimer >= 2.7 && attackingTimer <= 2.72) {
+                        normgAttack();
+                    }
+                }                                
             }
             distdisplay = distance;
         }
 
         public void attack() {
             attackAnim.SetTrigger("Bug Attack");
-            //StartCoroutine(attackDelay());
+        }
+
+        public void normgAttack() {
             GameObject projectileInstance = Instantiate(projectile, ProjectileSpawn.position, ProjectileSpawn.rotation);
             projectileInstance.GetComponent<IProjectile>().Direction = ProjectileSpawn.forward;
         }
-
-        /*public IEnumerator attackDelay() {
-            yield return new WaitForSeconds(3f);
-        }*/
     }
 }

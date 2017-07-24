@@ -28,16 +28,16 @@ namespace YenensTale {
             if (destroyTime <= 0) {
                 Extinguish();
             }
-            if (Vector3.Distance(spawnPosition, transform.position) >= Range) {
+
+            /*if (Vector3.Distance(spawnPosition, transform.position) >= Range) {
                 Extinguish();
-            }
+            }*/
         }
 
         void OnTriggerEnter(Collider col) {
             IReceiveDamage receiveDamage = col.transform.GetComponent<IReceiveDamage>();
             if (receiveDamage != null) {
                 receiveDamage.ReceiveDamage(Direction, Damage, gameObject);
-                Debug.Log("This Worked!");
                 Extinguish();
             }
         }

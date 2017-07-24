@@ -8,13 +8,11 @@ namespace YenensTale {
         private UnityEngine.AI.NavMeshAgent navLook = null;
         public GameObject playerWhere = null;
         public Animator bugJump;
-        //public Transform bugStartPoint;
         public Transform bugEndpoint;
         Vector3 heWent;
 
         void Start() {
             navLook = GetComponent<UnityEngine.AI.NavMeshAgent>();
-            //transform.position = bugStartPoint.position;
             bugJump.SetTrigger("Bug Jump");
         }
 
@@ -22,7 +20,6 @@ namespace YenensTale {
             navLook.acceleration = 5;
             navLook.speed = 500;
             navLook.SetDestination(bugEndpoint.transform.position);
-            //float distance = Vector3.Distance(playerWhere.transform.position, transform.position);
             //heWent was previously direction
             heWent = (bugEndpoint.transform.position - transform.position).normalized;
         }
