@@ -24,11 +24,11 @@ namespace YenensTale {
         private int useCounter = 1;
 
         void Start() {
-            box.switchFlipped += Box_switchFlipped;
+            box.switchFlipped += boxSwitchFlippedHandler;
             //StartCoroutine(DelayFade());
         }
 
-        private void Box_switchFlipped() {
+        private void boxSwitchFlippedHandler() {
             boxSwitch = true;
         }
 

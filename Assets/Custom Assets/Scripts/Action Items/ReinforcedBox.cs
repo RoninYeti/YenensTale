@@ -16,17 +16,24 @@ namespace YenensTale {
         public event SwitchFlipped switchFlipped;
 
         public override void Interact() {
-            if (interacted) {
+            print("A");
+            if (interacted)
+            {
                 DialogueSystem.Instance.AddNewDialogue(emptyDialogue, "Yenen");
             }
             else
+            {
                 aSource.PlayOneShot(reinforcedBox);
                 DialogueSystem.Instance.AddNewDialogue(dialogue, "Yenen");
+                //Call event that tells subscribers this switch has been flipped
+                if (switchFlipped != null)
+                {
+                    switchFlipped();
+                }
+            }
             interacted = true;
 
-            if (switchFlipped != null) {
-                switchFlipped();
-            }
+            
 
             //print(lightPost.BoxSwitch);
             //activate.equipRecharge();
