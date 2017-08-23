@@ -6,6 +6,9 @@ namespace YenensTale {
 
         UnityEngine.AI.NavMeshAgent playerAgent;
         private Animator anim;
+        Interactable goalInteraction;
+        [SerializeField]
+        private float interactionDistance = 3.0f;
 
         void Start() {
             playerAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -16,22 +19,25 @@ namespace YenensTale {
             if (Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
                 GetInteraction();
             anim.SetFloat("walk", playerAgent.desiredVelocity.magnitude);
+            
+            if (goalInteraction != null && (transform.position - goalInteraction.transform.position).magnitude < interactionDistance) {
+                goalInteraction.Interact();
+                goalInteraction = null;
+            }
         }
 
         void GetInteraction() {
             Ray interactionRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit interactionInfo;
 
-            if (Physics.Raycast(interactionRay, out interactionInfo, Mathf.Infinity)) {
+            if (Physics.Raycast(interactionRay, out interactionInfo, 850)) {
                 GameObject interactedObject = interactionInfo.collider.gameObject;
-                if (interactedObject.tag == "Interactable Object") {
-                    interactedObject.GetComponent<Interactable>().MoveToInteraction(playerAgent);
-                }
-
-                else {
-                    playerAgent.stoppingDistance = 0;
-                    playerAgent.destination = interactionInfo.point;
-                }
+                //NOTE: HACK.
+                goalInteraction = interactedObject.GetComponent<Interactable>();
+                //else {
+                playerAgent.stoppingDistance = 0;
+                playerAgent.destination = interactionInfo.point;
+                //}
             }
         }
     }
