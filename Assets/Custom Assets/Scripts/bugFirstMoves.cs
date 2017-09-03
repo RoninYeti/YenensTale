@@ -10,10 +10,13 @@ namespace YenensTale {
         public Animator bugJump;
         public Transform bugEndpoint;
         Vector3 heWent;
+        public AudioSource aSource;
+        public AudioClip normgBugJump;
 
         void Start() {
             navLook = GetComponent<UnityEngine.AI.NavMeshAgent>();
             bugJump.SetTrigger("Bug Jump");
+            aSource.PlayOneShot(normgBugJump);
         }
 
         void FixedUpdate() {

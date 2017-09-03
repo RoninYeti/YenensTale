@@ -16,11 +16,12 @@ namespace YenensTale {
         public event SwitchFlipped switchFlipped;
 
         public override void Interact() {
-            print("A");
+            //print("A");
             if (interacted)
             {
                 DialogueSystem.Instance.AddNewDialogue(emptyDialogue, "Yenen");
             }
+
             else
             {
                 aSource.PlayOneShot(reinforcedBox);
@@ -31,9 +32,8 @@ namespace YenensTale {
                     switchFlipped();
                 }
             }
-            interacted = true;
 
-            
+            interacted = true;
 
             //print(lightPost.BoxSwitch);
             //activate.equipRecharge();

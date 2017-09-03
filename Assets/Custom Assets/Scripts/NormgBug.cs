@@ -10,10 +10,14 @@ namespace YenensTale {
         public float maxhealth;
         public Animator bugDeath;
         public GameObject bugEndPoint;
+        public NormgBug mainScript;
         public BugEnemy otherScript;
         public bugFirstMoves otherOtherScript;
         public UnityEngine.AI.NavMeshAgent navTesting = null;
-                
+        public AudioSource aSource;
+        public AudioClip normgBugDying;
+        public AudioClip normgBugAttacked;
+
         void Start() {
             currentHealth = maxhealth; 
         }
@@ -30,12 +34,16 @@ namespace YenensTale {
 
         public void ReceiveDamage(Vector3 direction, float damage, GameObject source) {
             currentHealth -= damage;
+            aSource.PlayOneShot(normgBugAttacked);
             if (currentHealth <= 0) Die();
         }
 
         void Die() {
+            aSource.PlayOneShot(normgBugDying);
             bugDeath.SetTrigger("Bug Dead");
+            mainScript.enabled = false;
             otherScript.enabled = false;
+            otherOtherScript.enabled = false;
         }
 
         void FixedUpdate() {

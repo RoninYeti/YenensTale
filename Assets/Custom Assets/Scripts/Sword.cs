@@ -12,6 +12,8 @@ namespace YenensTale {
         public Transform ProjectileSpawn { get; set; }
 
         Lightning lightning;
+        public AudioSource aSource;
+        public AudioClip swordSwing;
 
         void Start() {
             lightning = Resources.Load<Lightning>("Weapons/Projectiles/Lightning");
@@ -20,6 +22,10 @@ namespace YenensTale {
 
         public void PerformAttack() {
             animator.SetTrigger("Base_Attack");
+        }
+
+        public void AttackSound(){
+            aSource.PlayOneShot(swordSwing);
         }
 
         public void PerformSpecialAttack() {

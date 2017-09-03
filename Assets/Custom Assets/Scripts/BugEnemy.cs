@@ -16,6 +16,8 @@ namespace YenensTale {
         //the below float was used to simply show us usable parameters in the inspector
         public float distdisplay = 0;
         private float startAttackingTimer = 0;
+        public AudioSource aSource;
+        public AudioClip normgBugAttack;
 
         [SerializeField]
         private GameObject projectile;
@@ -57,6 +59,7 @@ namespace YenensTale {
 
         public void attack() {
             attackAnim.SetTrigger("Bug Attack");
+            aSource.PlayOneShot(normgBugAttack);
         }
 
         public void normgAttack() {
